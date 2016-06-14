@@ -3,18 +3,21 @@
 function double_to_one(collection) {
 
   //在这里写入代码
-  var temp=[],result=[];
-  for(var i=0;i<collection.length;i++)
-    for(var j=0;j<collection[i].length;j++){
-      temp.push(collection[i][j]);
+  var temp = [];
+  var result = [], hash = {};
+
+  var c =collection.join(",").split(",");
+  for(var i = 0; i < c.length; i++){
+    temp.push(Number.parseInt(c[i]));
+  }
+
+  for (var j = 0, elem; (elem = temp[j]) != undefined; j++) {
+    if (!hash[elem]) {
+      result.push(elem);
+      hash[elem] = true;
     }
-    for(var k=0;k<temp.length-1;k++)
-      for(var t=1;t<temp.length;t++)
-      {
-        if(temp[k]!=temp[t])
-            result.push(temp[k]);  
-      }
-    return result;
+  }
+  return result;
 }
 
 module.exports = double_to_one;
