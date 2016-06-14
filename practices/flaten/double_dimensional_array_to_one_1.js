@@ -7,7 +7,7 @@ function double_to_one(collection) {
   for(var i=0;i<collection.length;i++)
     for(var j=0;j<collection[i].length;j++)
     {
-      temp.push(collection[i][j]);
+      temp.push(number.parseInt(collection[i][j]));
     }
     return temp;
 }
